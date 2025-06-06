@@ -1,14 +1,15 @@
 import React from 'react'
 import { Button,
  } from '@mui/material';
-import LanguageSelect from '../comp/LanguageSelect';
+import LanguageSelect from '../components/LanguageSelect';
 import FaviouriteIcon from '@mui/icons-material/FavoriteBorder';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { SearchIcon } from 'lucide-react';
-import { Divider } from 'antd';
+import { SearchIcon } from '@mui/icons-material';
+import { Divider } from '@mui/material';
 import InputBase from '@mui/material/InputBase';
-import Footer from '../comp/Footer';
+import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
+
 
 
 

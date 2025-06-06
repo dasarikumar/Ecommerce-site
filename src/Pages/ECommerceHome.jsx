@@ -41,6 +41,9 @@ const ECommerceHome = () => {
   const handleAccount = () => {
     navigate('/account');
   };
+  const handleErrorPage = () => {
+    navigate('/error');
+  };
   return (
     <div>
       <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>

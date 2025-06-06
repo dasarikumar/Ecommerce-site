@@ -10,6 +10,7 @@ import ECommerceHome from '../Pages/ECommerceHome';
 import WithoutHome from '../Pages/HomewithOut';
 import Contact from '../Pages/Contact';
 import Account from '../Pages/Account';
+import PageError from '../Pages/PageError';
 
 const AppRouter = () => {
   return (
@@ -24,7 +25,7 @@ const AppRouter = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="Productdetails" element={<Product_details/>} />
         <Route path="/account" element={<Account/>} />
-        
+        <Route path="/error" element={<PageError />} />
       </Routes>
     </BrowserRouter>
   );
