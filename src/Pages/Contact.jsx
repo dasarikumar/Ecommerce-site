@@ -23,7 +23,7 @@ const Contact = () => {
     navigate('/about');
   };
   const handleCart = () => {
-    navigate('/cart');
+    navigate('/Productdetails');
   };
   const handleContact = () => {
     navigate('/contact');
@@ -31,6 +31,14 @@ const Contact = () => {
   const handleHome = () => {
     navigate('/home');
   };
+  const handleAccount = () => {
+
+    navigate('/account');
+  };
+  const handleErrorPage = () => {
+    navigate('/error');
+  };
+
   return (
     <div>
       <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>
@@ -51,7 +59,7 @@ const Contact = () => {
           <Button onClick={handleAbout} variant="text" color="" style={{ marginRight: '10px' }}>
             About Us
           </Button>
-          <Button variant="text" color="">
+          <Button onClick={handleErrorPage} variant="text" color="">
             Sign Up
           </Button>
           <div style={{ position: 'relative', width: '200px' }}>
@@ -68,7 +76,7 @@ const Contact = () => {
     </div>
           <FaviouriteIcon onClick={handleWishlist} style={{ color: '#000', marginLeft: '10px' }} />
           <CartIcon onClick={handleCart} style={{ color: '#000', marginLeft: '10px' }} />
-          <Avatar/>
+          <Avatar onClick={handleAccount}/>
           </div>
           <Divider/>
           <EditContact/>

@@ -64,7 +64,7 @@ const ECommerceHome = () => {
           <Button  onClick={handleAbout} variant="text" color="" style={{ marginRight: '10px' }}>
             About
           </Button>
-          <Button variant="text" color="">
+          <Button onClick={handleErrorPage} variant="text" color="">
             Sign Up
           </Button>
           <div style={{ position: 'relative', width: '200px' }}>

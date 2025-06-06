@@ -4,7 +4,7 @@ import { Button,
 import LanguageSelect from '../components/LanguageSelect';
 import FaviouriteIcon from '@mui/icons-material/FavoriteBorder';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { SearchIcon } from '@mui/icons-material';
+import SearchIcon from '@mui/icons-material/SearchOutlined';
 import { Divider } from '@mui/material';
 import InputBase from '@mui/material/InputBase';
 import Footer from '../components/Footer';
@@ -22,7 +22,7 @@ const PageError = () => {
     navigate('/about');
   };
   const handleCart = () => {
-    navigate('/cart');
+    navigate('/Productdetails');
   };
   const handleContact = () => {
     navigate('/contact');
@@ -30,6 +30,11 @@ const PageError = () => {
   const handleHome = () => {
     navigate('/home');
   };
+  const handleAccount = () => {
+    navigate('/account');
+  }
+
+
   return (
     <div>
       <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>

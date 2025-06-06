@@ -2,7 +2,7 @@ import React from 'react'
 import { Button,
  } from '@mui/material';
 import LanguageSelect from '../components/LanguageSelect';
-import FaviouriteIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/FavoriteBorder';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import {Divider} from '@mui/material';
@@ -10,13 +10,36 @@ import InputBase from '@mui/material/InputBase';
 import Footer from '../components/Footer';
 import EditProfile from '../components/EditProfile';
 import Avatar from '@mui/material/Avatar';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Account = () => {
+  const navigate = useNavigate();
+  const handleWishlist = () => {
+    navigate('/wish');
+  };
+  const handleAbout = () => {
+    navigate('/about');
+  };
+  const handleCart = () => {
+    navigate('/Productdetails');
+  };
+  const handleContact = () => {
+    navigate('/contact');
+  };
+  const handleHome = () => {
+    navigate('/home');
+  };
+  const handleAccount = () => {
+    navigate('/account');
+  };
+  const handleErrorPage = () => {
+    navigate('/error');
+  };
   return (
     <div>
-      <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>
+     <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>
         <p style={{ color: '#fff'  }}>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
         <Button variant="text" style={{ color: '#fff', borderColor: '#fff', marginLeft: '20px' }}>
           Shop Now
@@ -25,16 +48,16 @@ const Account = () => {
         </header>
         <div style={{ display:'flex', flexDirection:'row', justifyContent:'space-evenly', alignItems:'center', marginTop:'20px' }}>
           <h3>Exclusive</h3>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
+          <Button onClick={handleHome} variant="text" color="" style={{ marginRight: '10px' }}>
             Home
           </Button>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
-            Products
+          <Button onClick={handleContact} variant="text" color="" style={{ marginRight: '10px' }}>
+            Contact
           </Button>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
-            About Us
+          <Button  onClick={handleAbout} variant="text" color="" style={{ marginRight: '10px' }}>
+            About
           </Button>
-          <Button variant="text" color="">
+          <Button onClick={handleErrorPage} variant="text" color="">
             Sign Up
           </Button>
           <div style={{ position: 'relative', width: '200px' }}>
@@ -48,12 +71,16 @@ const Account = () => {
           width: '250px',
         }}
       />
-    </div>
-          <FaviouriteIcon style={{ color: '#000', marginLeft: '10px' }} />
-          <CartIcon style={{ color: '#000', marginLeft: '10px' }} />
-          <Avatar/>
           </div>
-          <Divider/>
+          <FavoriteIcon 
+                onClick={handleWishlist}
+                style={{ color: '#000', marginLeft: '10px', cursor: 'pointer' }} 
+            />
+          <CartIcon onClick={handleCart} style={{ color: '#000', marginLeft: '10px' }} />
+          <Avatar onClick={handleAccount} />
+          </div>
+          <Divider>
+          </Divider>
           <EditProfile/>
           
 <Footer/>

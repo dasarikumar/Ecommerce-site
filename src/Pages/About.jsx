@@ -21,13 +21,16 @@ const About = () => {
     navigate('/about');
   };
   const handleCart = () => {
-    navigate('/cart');
+    navigate('/Productdetails');
   };
   const handleContact = () => {
     navigate('/contact');
   };
   const handleHome = () => {
     navigate('/home');
+  };
+  const handleAccount = () => {
+    navigate('/account');
   };
   return (
     <div>
@@ -69,7 +72,7 @@ const About = () => {
           style={{ color: '#000', marginLeft: '10px', cursor: 'pointer' }} 
         />
         <CartIcon onclick={handleCart} style={{ color: '#000', marginLeft: '10px' }} />
-        <Avatar />
+        <Avatar onClick={handleAccount} />
       </div>
       <Divider />
           
