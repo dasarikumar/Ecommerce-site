@@ -1,8 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Aside_menu from '../Aside/Aside_menu';
-import ResponsiveAppBar_Home from '../Header/Header_menu/ResponsiveAppBar_Home';
-import Footer from '../Footer/Footer_menu/Footer';
+import Aside_menu from '../components/Aside_menu';
+import ResponsiveAppBar_Home from '../components/ResponsiveAppBar_Home';
+import Footer from '../components/Footer';
 
 const Layout_structure = () => {
   return (

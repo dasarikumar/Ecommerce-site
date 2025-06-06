@@ -12,10 +12,11 @@ import {
 } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import { useNavigate } from 'react-router-dom';
+import SignupImage from '../assets/Side.png';
 
 function SignUpPage() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  // const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
 
   const handleSignUp = () => {
@@ -28,14 +29,13 @@ function SignUpPage() {
         <Grid item xs={12} md={6}>
           <Box
             component="img"
-            src="https://cdn.pixabay.com/photo/2017/08/30/01/04/online-1561484_960_720.jpg"
-            alt="E-commerce Website"
+            src={SignupImage}
+            alt="Signup Visual"
             sx={{
-              width: '100%',
-              height: isMobile ? 'auto' : '500px',
-              objectFit: 'cover',
-              borderRadius: 2,
-              boxShadow: 3,
+              width: '500px',
+              height: 'auto',
+              display: 'block',
+              marginLeft: '0',
             }}
           />
         </Grid>

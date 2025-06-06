@@ -1,4 +1,11 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button, Divider, InputBase } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import FavoriteIcon from '@mui/icons-material/FavoriteBorder';
+import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Avatar from '@mui/material/Avatar';
+import LanguageSelect from '../components/LanguageSelect';
 
 const wishListCards = [
   {
@@ -403,23 +410,72 @@ const AutoScrollCarousel = ({ title, buttonText, cards, showAddToCart }) => {
   );
 };
 
-const Wish_list = () => {
+const Wishlist = () => {
+  const navigate = useNavigate();
+  const handleWishlist = () => {
+    console.log('Wishlist clicked');
+  };
+  const handleAbout = () => {
+    navigate('/about');
+  };
   return (
-    <div style={{ padding: '20px', backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
-      <AutoScrollCarousel
-        title="Wish List"
-        buttonText="Add More"
-        cards={wishListCards}
-        showAddToCart={true}
-      />
-      <AutoScrollCarousel
-        title="Just For You"
-        buttonText="See All"
-        cards={justForYouCards}
-        showAddToCart={false}
-      />
+    <div>
+      <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>
+        <p style={{ color: '#fff'  }}>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
+        <Button variant="text" style={{ color: '#fff', borderColor: '#fff', marginLeft: '20px' }}>
+          Shop Now
+        </Button>
+        <LanguageSelect display='flex' flexDirection='row' justifyContent='end' alignItems='end' />
+      </header>
+      <div style={{ display:'flex', flexDirection:'row', justifyContent:'space-evenly', alignItems:'center', marginTop:'20px' }}>
+        <h3>Exclusive</h3>
+        <Button variant="text" color="" style={{ marginRight: '10px' }}>
+          Home
+        </Button>
+        <Button variant="text" color="" style={{ marginRight: '10px' }}>
+          Products
+        </Button>
+        <Button onClick={handleAbout} variant="text" color="" style={{ marginRight: '10px' }}>
+          About
+        </Button>
+        <Button variant="text" color="">
+          Sign Up
+        </Button>
+        <div style={{ position: 'relative', width: '200px' }}>
+          <SearchIcon style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', color: '#888' }} />
+          <InputBase
+            placeholder="What are you looking for?"
+            style={{
+              paddingLeft: '35px',
+              border: '1px solid #ccc',
+              borderRadius: '2px',
+              width: '250px',
+            }}
+          />
+        </div>
+        <FavoriteIcon 
+          onClick={handleWishlist}
+          style={{ color: '#000', marginLeft: '10px', cursor: 'pointer' }} 
+        />
+        <CartIcon style={{ color: '#000', marginLeft: '10px' }} />
+        <Avatar />
+      </div>
+      <Divider />
+      <div style={{ padding: '20px', backgroundColor: '#f5f5f5', minHeight: '100vh' }}>
+        <AutoScrollCarousel
+          title="Wish List"
+          buttonText="Add More"
+          cards={wishListCards}
+          showAddToCart={true}
+        />
+        <AutoScrollCarousel
+          title="Just For You"
+          buttonText="See All"
+          cards={justForYouCards}
+          showAddToCart={false}
+        />
+      </div>
     </div>
   );
 };
-
-export default Wish_list;
+export default Wishlist;

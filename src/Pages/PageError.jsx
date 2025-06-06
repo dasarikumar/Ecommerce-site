@@ -8,10 +8,27 @@ import { SearchIcon } from 'lucide-react';
 import { Divider } from 'antd';
 import InputBase from '@mui/material/InputBase';
 import Footer from '../comp/Footer';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const PageError = () => {
+  const navigate = useNavigate();
+  const handleWishlist = () => {
+    navigate('/wish');
+  };
+  const handleAbout = () => {
+    navigate('/about');
+  };
+  const handleCart = () => {
+    navigate('/cart');
+  };
+  const handleContact = () => {
+    navigate('/contact');
+  };
+  const handleHome = () => {
+    navigate('/home');
+  };
   return (
     <div>
       <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>
@@ -23,14 +40,14 @@ const PageError = () => {
         </header>
         <div style={{ display:'flex', flexDirection:'row', justifyContent:'space-evenly', alignItems:'center', marginTop:'20px' }}>
           <h3>Exclusive</h3>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
+          <Button onClick={handleHome} variant="text" color="" style={{ marginRight: '10px' }}>
             Home
           </Button>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
-            Products
+          <Button onClick={handleContact} variant="text" color="" style={{ marginRight: '10px' }}>
+            Contact
           </Button>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
-            About Us
+          <Button onClick={handleAbout} variant="text" color="" style={{ marginRight: '10px' }}>
+            About
           </Button>
           <Button variant="text" color="">
             Sign Up
@@ -47,8 +64,8 @@ const PageError = () => {
         }}
       />
     </div>
-          <FaviouriteIcon style={{ color: '#000', marginLeft: '10px' }} />
-          <CartIcon style={{ color: '#000', marginLeft: '10px' }} />
+          <FaviouriteIcon onClick={handleWishlist} style={{ color: '#000', marginLeft: '10px' }} />
+          <CartIcon onClick={handleCart} style={{ color: '#000', marginLeft: '10px' }} />
           </div>
           <Divider>
           </Divider>

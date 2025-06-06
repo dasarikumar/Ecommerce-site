@@ -2,24 +2,45 @@ import React from 'react'
 import { Button,
   Box,
  } from '@mui/material';
-import LanguageSelect from '../comp/LanguageSelect';
-import FaviouriteIcon from '@mui/icons-material/FavoriteBorder';
+import { useNavigate } from 'react-router-dom';
+import LanguageSelect from '../components/LanguageSelect';
+import FavoriteIcon from '@mui/icons-material/FavoriteBorder';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { SearchIcon } from 'lucide-react';
-import { Divider } from 'antd';
+import SearchIcon from '@mui/icons-material/Search';
+import Divider from '@mui/material/Divider';
 import InputBase from '@mui/material/InputBase';
 import Banner1 from '../assets/Banner1.png'; 
-import FlashSalesSection from '../comp/FlashSalesSection';
-import CategorySection from '../comp/CategorySection';
-import ProductsSection from '../comp/ProductsSection';
+import FlashSalesSection from '../components/FlashSalesSection';
+import CategorySection from '../components/CategorySection';
+import ProductsSection from '../components/ProductsSection';
 import ad from '../assets/ad.png'; 
-import NewArrivalSection from '../comp/NewArrivalSection';
-import ServiceHighlights from '../comp/ServicesHighlights';
-import Footer from '../comp/Footer';
+import NewArrivalSection from '../components/NewArrivalSection';
+import ServiceHighlights from '../components/ServicesHighlights';
+import Footer from '../components/Footer';
+import Avatar from '@mui/material/Avatar';
 
 
 
 const ECommerceHome = () => {
+  const navigate = useNavigate();
+  const handleWishlist = () => {
+    navigate('/wish');
+  };
+  const handleAbout = () => {
+    navigate('/about');
+  };
+  const handleCart = () => {
+    navigate('/Productdetails');
+  };
+  const handleContact = () => {
+    navigate('/contact');
+  };
+  const handleHome = () => {
+    navigate('/home');
+  };
+  const handleAccount = () => {
+    navigate('/account');
+  };
   return (
     <div>
       <header style={{ display:'flex', flexDirection:'row' , justifyContent:'center', backgroundColor: '#000', textAlign: 'center' }}>
@@ -31,14 +52,14 @@ const ECommerceHome = () => {
         </header>
         <div style={{ display:'flex', flexDirection:'row', justifyContent:'space-evenly', alignItems:'center', marginTop:'20px' }}>
           <h3>Exclusive</h3>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
+          <Button onClick={handleHome} variant="text" color="" style={{ marginRight: '10px' }}>
             Home
           </Button>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
-            Products
+          <Button onClick={handleContact} variant="text" color="" style={{ marginRight: '10px' }}>
+            Contact
           </Button>
-          <Button variant="text" color="" style={{ marginRight: '10px' }}>
-            About Us
+          <Button  onClick={handleAbout} variant="text" color="" style={{ marginRight: '10px' }}>
+            About
           </Button>
           <Button variant="text" color="">
             Sign Up
@@ -54,10 +75,13 @@ const ECommerceHome = () => {
           width: '250px',
         }}
       />
-    </div>
-          <FaviouriteIcon style={{ color: '#000', marginLeft: '10px' }} />
-          <CartIcon style={{ color: '#000', marginLeft: '10px' }} />
-          <Avatar/>
+          </div>
+          <FavoriteIcon 
+                onClick={handleWishlist}
+                style={{ color: '#000', marginLeft: '10px', cursor: 'pointer' }} 
+            />
+          <CartIcon onClick={handleCart} style={{ color: '#000', marginLeft: '10px' }} />
+          <Avatar onClick={handleAccount} />
           </div>
           <Divider>
           </Divider>

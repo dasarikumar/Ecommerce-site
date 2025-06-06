@@ -1,23 +1,32 @@
 import React from 'react'
 import { Button,
+  Box,
  } from '@mui/material';
 import LanguageSelect from '../components/LanguageSelect';
 import FaviouriteIcon from '@mui/icons-material/FavoriteBorder';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import {Divider} from '@mui/material';
+import Divider from '@mui/material/Divider';
 import InputBase from '@mui/material/InputBase';
+import Banner1 from '../assets/Banner1.png'; 
+import FlashSalesSection from '../components/FlashSalesSection';
+import CategorySection from '../components/CategorySection';
+import ProductsSection from '../components/ProductsSection';
+import ad from '../assets/ad.png'; 
+import NewArrivalSection from '../components/NewArrivalSection';
+import ServiceHighlights from '../components/ServicesHighlights';
 import Footer from '../components/Footer';
-import EditContact from '../components/EditContact';
-import Avatar from '@mui/material/Avatar';
 import { useNavigate } from 'react-router-dom';
 
 
 
-const Contact = () => {
+const WithoutHome = () => {
   const navigate = useNavigate();
-   const handleWishlist = () => {
+  const handleWishlist = () => {
     navigate('/wish');
+  };
+  const handleLogin = () => {
+    navigate('/signin');
   };
   const handleAbout = () => {
     navigate('/about');
@@ -49,7 +58,7 @@ const Contact = () => {
             Contact
           </Button>
           <Button onClick={handleAbout} variant="text" color="" style={{ marginRight: '10px' }}>
-            About Us
+            About
           </Button>
           <Button variant="text" color="">
             Sign Up
@@ -68,14 +77,55 @@ const Contact = () => {
     </div>
           <FaviouriteIcon onClick={handleWishlist} style={{ color: '#000', marginLeft: '10px' }} />
           <CartIcon onClick={handleCart} style={{ color: '#000', marginLeft: '10px' }} />
-          <Avatar/>
+          <Button onClick={handleLogin} variant="text" style={{ marginLeft: '10px' }}>
+            Login
+            </Button>
           </div>
-          <Divider/>
-          <EditContact/>
-          
+          <Divider>
+          </Divider>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+           <div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'flex-start',
+  marginLeft: '150px',
+  lineHeight: '2.8',
+}}>
+  <p style={{ color: '#000', margin: 0 }}>Women's Fashion</p>
+  <p style={{ color: '#000', margin: 0 }}>Men's Fashion</p>
+  <p style={{ color: '#000', margin: 0 }}>Electronics</p>
+  <p style={{ color: '#000', margin: 0 }}>Home & Lifestyle</p>
+  <p style={{ color: '#000', margin: 0 }}>Medicine</p>
+  <p style={{ color: '#000', margin: 0 }}>Sports & Outdoor</p>
+  <p style={{ color: '#000', margin: 0 }}>Baby's & Toys</p>
+  <p style={{ color: '#000', margin: 0 }}>Groceries & Pets</p>
+  <p style={{ color: '#000', margin: 0 }}>Health & Beauty</p>
+</div>
+<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginLeft: '100px' }}>
+  <img src={Banner1} alt="Image" style={{ width: '800px', height: '300px' }} />
+</div>
+          </div>
+          <FlashSalesSection/>
+          <CategorySection/>
+          <ProductsSection/>
+          <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              height="100vh" // or any specific height to center vertically
+>
+  <img
+    src={ad}
+    alt="Rectangle 1"
+    style={{ width: '80%', height: 'auto' }}
+  />
+</Box>
+<NewArrivalSection/>
+<ServiceHighlights/>
 <Footer/>
     </div>
   )
 }
 
-export default Contact;
+export default WithoutHome;

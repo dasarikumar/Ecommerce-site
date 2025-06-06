@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button,
  } from '@mui/material';
-import LanguageSelect from '../comp/LanguageSelect';
+import LanguageSelect from '../components/LanguageSelect';
 import FaviouriteIcon from '@mui/icons-material/FavoriteBorder';
 import CartIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import {Divider} from '@mui/material';
 import InputBase from '@mui/material/InputBase';
-import Footer from '../comp/Footer';
-import EditProfile from '../comp/EditProfile';
+import Footer from '../components/Footer';
+import EditProfile from '../components/EditProfile';
 import Avatar from '@mui/material/Avatar';
 
 
